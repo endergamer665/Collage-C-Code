@@ -1,1 +1,28 @@
+using System;
 
+namespace grading
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("input score:");
+            int score = Convert.ToInt32(Console.ReadLine());
+
+            if (score < 50)
+                Console.WriteLine("FAIL");
+
+            else if (score >= 50 && score <= 59)
+                Console.WriteLine("PASS");
+
+            else if (score >= 60 && score <= 79)
+                Console.WriteLine("MERIT");
+
+            else if (score >= 80 && score <= 100)
+                Console.WriteLine("DISTINCTION");
+
+            else
+                Console.WriteLine("ERROR");
+        }
+    }
+}
