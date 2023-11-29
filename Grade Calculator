@@ -6,10 +6,17 @@ namespace grading
     {
         static void Main(string[] args)
         {
+            int exit = 0;
+            while (exit == 1)
             Console.WriteLine("input score:");
-            int score = Convert.ToInt32(Console.ReadLine());
+            string input = Console.ReadLine();
+            input.ToLower();
+            if (input == "exit")
+                exit = 1;
 
-            if (score < 1 || score < 100)
+            int score = System.Convert.ToInt32(input);
+
+           if (score > 100)
                 Console.WriteLine("ERROR input exeads bondry");
 
             else if (score < 50)
@@ -19,10 +26,10 @@ namespace grading
                 Console.WriteLine("PASS");
 
             else if (score >= 60 && score <= 79)
-                Console.WriteLine("MERIT");
+                Console.WriteLine("MERIT"); 
 
             else if (score >= 80 && score <= 100)
-                Console.WriteLine("DISTINCTION");
+                Console.WriteLine("DISTINCTION");  
 
             else
                 Console.WriteLine("ERROR");
