@@ -9,7 +9,10 @@ namespace grading
             Console.WriteLine("input score:");
             int score = Convert.ToInt32(Console.ReadLine());
 
-            if (score < 50)
+            if (score < 1 || score < 100)
+                Console.WriteLine("ERROR input exeads bondry");
+
+            else if (score < 50)
                 Console.WriteLine("FAIL");
 
             else if (score >= 50 && score <= 59)
