@@ -7,7 +7,7 @@ namespace grading
         static void Main(string[] args)
         {
             int real = 0;
-            while (real == 0)
+            while (real == 0) //exits code after output 
             {
                 Console.WriteLine("input score:");
                 int score = Convert.ToInt32(Console.ReadLine()); //input score persent
@@ -17,25 +17,28 @@ namespace grading
                 {
                     Console.WriteLine("ERROR input exeads bondry"); //if input is outside acsepted value
                 }
-                else if (score < 50)
+                else if (score < 50 && score >= 0)
                 {
                     Console.WriteLine("FAIL"); //output grade FAIL
-                    real = 1;
+                    real = 1; //exits code after output 
+
                 }
                 else if (score >= 50 && score <= 59)
                 {
                     Console.WriteLine("PASS"); //output grade PASS
-                    real = 1;
+                    real = 1; //exits code after output 
+
                 }
                 else if (score >= 60 && score <= 79)
                 {
                     Console.WriteLine("MERIT"); //output grade MERIT
-                    real = 1;
+                    real = 1; //exits code after output 
+
                 }
                 else if (score >= 80 && score <= 100)
                 {
                     Console.WriteLine("DISTINCTION");  //output grade DISTINCTION
-                    real = 1;
+                    real = 1; //exits code after output 
                 }
 
                 else
