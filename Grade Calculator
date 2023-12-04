@@ -6,33 +6,41 @@ namespace grading
     {
         static void Main(string[] args)
         {
-            int exit = 0;
-            while (exit == 1)
-            Console.WriteLine("input score:");
-            string input = Console.ReadLine();
-            input.ToLower();
-            if (input == "exit")
-                exit = 1;
+            int real = 0;
+            while (real == 0)
+            {
+                Console.WriteLine("input score:");
+                int score = Convert.ToInt32(Console.ReadLine()); //input score persent
 
-            int score = System.Convert.ToInt32(input);
 
-           if (score > 100)
-                Console.WriteLine("ERROR input exeads bondry");
+                if (score > 100)
+                {
+                    Console.WriteLine("ERROR input exeads bondry"); //if input is outside acsepted value
+                }
+                else if (score < 50)
+                {
+                    Console.WriteLine("FAIL"); //output grade FAIL
+                    real = 1;
+                }
+                else if (score >= 50 && score <= 59)
+                {
+                    Console.WriteLine("PASS"); //output grade PASS
+                    real = 1;
+                }
+                else if (score >= 60 && score <= 79)
+                {
+                    Console.WriteLine("MERIT"); //output grade MERIT
+                    real = 1;
+                }
+                else if (score >= 80 && score <= 100)
+                {
+                    Console.WriteLine("DISTINCTION");  //output grade DISTINCTION
+                    real = 1;
+                }
 
-            else if (score < 50)
-                Console.WriteLine("FAIL");
-
-            else if (score >= 50 && score <= 59)
-                Console.WriteLine("PASS");
-
-            else if (score >= 60 && score <= 79)
-                Console.WriteLine("MERIT"); 
-
-            else if (score >= 80 && score <= 100)
-                Console.WriteLine("DISTINCTION");  
-
-            else
-                Console.WriteLine("ERROR");
+                else
+                    Console.WriteLine("ERROR"); //unexpected error
+            }
         }
     }
 }
