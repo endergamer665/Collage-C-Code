@@ -13,7 +13,7 @@ namespace grading
                 int score = Convert.ToInt32(Console.ReadLine()); //input score persent
 
 
-                if (score > 100)
+                if (score > 100 || score < 0)
                 {
                     Console.WriteLine("ERROR input exeads bondry"); //if input is outside acsepted value
                 }
